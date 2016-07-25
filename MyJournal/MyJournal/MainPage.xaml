@@ -8,6 +8,25 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment = "Left">
+            <!--<TextBlock Text = "Hello, world!"  Margin = "20"  Width = "200" 
+            HorizontalAlignment = "Left"/>
+
+            <TextBlock Text = "Write your name." Margin = "20" Width = "200" 
+            HorizontalAlignment = "Left"/>
+
+            <TextBox x:Name = "txtbox"  Width = "280" Margin = "20" 
+            HorizontalAlignment = "Left"/>-->
+
+            <Button x:Name = "button1" Content = "Journal Base" Margin = "20" 
+            Click = "button_JournalBase"/>
+            
+            <Button x:Name = "button2" Content = "Settings" Margin = "20" 
+            Click = "button_Settings"/>
+
+            <TextBlock x:Name = "txtblock" HorizontalAlignment = "Left" 
+            Margin = "20"/>
+        </StackPanel>
 
     </Grid>
 </Page>
