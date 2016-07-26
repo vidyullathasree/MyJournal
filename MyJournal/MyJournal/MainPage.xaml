@@ -8,49 +8,50 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel HorizontalAlignment = "Left">
-            <!--<TextBlock Text = "Hello, world!"  Margin = "20"  Width = "200" 
-            HorizontalAlignment = "Left"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <RelativePanel>
+            <Button Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="36" Click="HamburgerButton_Click" />
+        </RelativePanel>
+        <SplitView Name="MySplitView" 
+                   Grid.Row="1" 
+                   DisplayMode="CompactOverlay" 
+                   OpenPaneLength="200" 
+                   CompactPaneLength="56" 
+                   HorizontalAlignment="Left">
+            <SplitView.Pane>
+                <ListBox SelectionMode="Single" 
+                         Name="IconsListBox" 
+                         SelectionChanged="IconsListBox_SelectionChanged">
+                    <ListBoxItem Name="AddNewItem">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE72D;" />
+                            <TextBlock Text="Log New Item" FontSize="24" Margin="20,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
 
-            <TextBlock Text = "Write your name." Margin = "20" Width = "200" 
-            HorizontalAlignment = "Left"/>
+                    <ListBoxItem Name="ViewJournalBase">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE734;" />
+                            <TextBlock Text="Journal Base" FontSize="24" Margin="20,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
 
-            <TextBox x:Name = "txtbox"  Width = "280" Margin = "20" 
-            HorizontalAlignment = "Left"/>-->
+                    <ListBoxItem Name="Settings">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock FontFamily="Segoe MDL2 Assets" FontSize="36" Text="&#xE713;" />
+                            <TextBlock Text="Settings" FontSize="24" Margin="20,0,0,0" />
+                        </StackPanel>
+                    </ListBoxItem>
 
-            <Button x:Name = "button1" Content = "Journal Base" Margin = "20,50,0,0" Width = "200"
-            Click = "button_JournalBase"/>
-
-            <Button x:Name = "button2" Content = "Log Tasks Now" Margin = "20,20,0,0" Width = "200"
-            Click = "button_ForcedLogging"/>
-
-            <Button x:Name = "button3" Content = "Settings" Margin = "20,20,0,0" Width = "200"
-            Click = "button_Settings"/>
-
-            <TextBlock x:Name = "txtblock" HorizontalAlignment = "Left" 
-            Margin = "20"/>
-
-        </StackPanel>
-        <StackPanel HorizontalAlignment = "Right">
-            <Grid Margin="10">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-                
-                <TextBlock Text = "Time: " Margin = "20" Width = "50" HorizontalAlignment = "Left"/>
-                <TimePicker x:Name = "arrivalTimePicker" Margin = "20"/>        
-                                              
-                
-            </Grid>
-
-        </StackPanel>        
+                </ListBox>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Frame x:Name="conetentFrame"/>
+            </SplitView.Content>
+        </SplitView>
         
-
     </Grid>
-</Page>
+</Page>                       

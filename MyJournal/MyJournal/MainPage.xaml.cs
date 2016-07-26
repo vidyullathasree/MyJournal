@@ -28,21 +28,19 @@ namespace MyJournal
             this.InitializeComponent();
         }
 
-        private void button_JournalBase(object sender, RoutedEventArgs e)
+        private void HamburgerButton_Click(object sender, RoutedEventArgs e)
         {
-            txtblock.Text = "You have clicked Journal base!";
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         }
 
-        private void button_ForcedLogging(object sender, RoutedEventArgs e)
+        private void IconsListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            txtblock.Text = "You have clicked Forced Logging!";
+            if (AddNewItem.IsSelected) { conetentFrame.Navigate(typeof(AddItemPage)); }
+            else if (ViewJournalBase.IsSelected) { conetentFrame.Navigate(typeof(JournalViewPage)); }
+            else if (Settings.IsSelected) { conetentFrame.Navigate(typeof(SettingsPage)); }
         }
 
-        private void button_Settings(object sender, RoutedEventArgs e)
-        {
-            txtblock.Text = string.Format("Thank you. Your appointment is set for {0}.",arrivalTimePicker.Time.ToString());
-        }
 
-        
     }
 }
+          
