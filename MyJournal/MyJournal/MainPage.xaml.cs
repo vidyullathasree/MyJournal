@@ -33,9 +33,16 @@ namespace MyJournal
             txtblock.Text = "You have clicked Journal base!";
         }
 
+        private void button_ForcedLogging(object sender, RoutedEventArgs e)
+        {
+            txtblock.Text = "You have clicked Forced Logging!";
+        }
+
         private void button_Settings(object sender, RoutedEventArgs e)
         {
-            txtblock.Text = "You have clicked Settings!";
+            txtblock.Text = string.Format("Thank you. Your appointment is set for {0}.",arrivalTimePicker.Time.ToString());
         }
+
+        
     }
 }
