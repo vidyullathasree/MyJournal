@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace MyJournal
@@ -26,5 +27,22 @@ namespace MyJournal
         {
             this.InitializeComponent();
         }
+
+        private void button_JournalBase(object sender, RoutedEventArgs e)
+        {
+            txtblock.Text = "You have clicked Journal base!";
+        }
+
+        private void button_ForcedLogging(object sender, RoutedEventArgs e)
+        {
+            txtblock.Text = "You have clicked Forced Logging!";
+        }
+
+        private void button_Settings(object sender, RoutedEventArgs e)
+        {
+            txtblock.Text = string.Format("Thank you. Your appointment is set for {0}.",arrivalTimePicker.Time.ToString());
+        }
+
+        
     }
 }
