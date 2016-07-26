@@ -7,8 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel HorizontalAlignment = "Left">
+    <Grid Name="Mainlayout" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment = "Left" Width="243">
             <!--<TextBlock Text = "Hello, world!"  Margin = "20"  Width = "200" 
             HorizontalAlignment = "Left"/>
 
@@ -31,7 +31,7 @@
             Margin = "20"/>
 
         </StackPanel>
-        <StackPanel HorizontalAlignment = "Right">
+        <StackPanel Name ="rightPanel" HorizontalAlignment = "Right" Width="1641" Margin="0,0,10,0">
             <Grid Margin="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
@@ -44,7 +44,7 @@
                 </Grid.RowDefinitions>
                 
                 <TextBlock Text = "Time: " Margin = "20" Width = "50" HorizontalAlignment = "Left"/>
-                <TimePicker x:Name = "arrivalTimePicker" Margin = "20"/>        
+              
                                               
                 
             </Grid>

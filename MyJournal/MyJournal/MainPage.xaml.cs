@@ -33,14 +33,20 @@ namespace MyJournal
             txtblock.Text = "You have clicked Journal base!";
         }
 
-        private void button_ForcedLogging(object sender, RoutedEventArgs e)
+        private async void button_ForcedLogging(object sender, RoutedEventArgs e)
         {
-            txtblock.Text = "You have clicked Forced Logging!";
+            var message = new Windows.UI.Popups.MessageDialog("Hello");
+            await message.ShowAsync();
         }
 
         private void button_Settings(object sender, RoutedEventArgs e)
         {
-            txtblock.Text = string.Format("Thank you. Your appointment is set for {0}.",arrivalTimePicker.Time.ToString());
+
+            TimePicker t1 = new TimePicker();
+
+            t1.Margin = new Thickness(50, 50, 0, 0);
+            rightPanel.Children.Add(t1);
+           
         }
 
         
