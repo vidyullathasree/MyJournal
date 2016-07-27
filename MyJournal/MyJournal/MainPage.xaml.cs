@@ -29,14 +29,14 @@ namespace MyJournal
         public MainPage()
         {
             this.InitializeComponent();
-            this.SqlConnection();
+            conetentFrame.Navigate(typeof(WelcomePage));
+            //   this.SqlConnection();
         }
 
         async public void SqlConnection()
         {
             path = System.IO.Path.Combine(Windows.Storage.ApplicationData.Current.LocalFolder.Path, "db.sqlite");
-            conn = new SQLite.Net.SQLiteConnection(new
-            SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
+            conn = new SQLite.Net.SQLiteConnection(new SQLite.Net.Platform.WinRT.SQLitePlatformWinRT(), path);
             conn.CreateTable<WorkItem>();
             Add_WorkItem(new DateTime(2016, 7, 26));
             string text = Retrieve_WorkItem(new DateTime(2016, 7, 26));
