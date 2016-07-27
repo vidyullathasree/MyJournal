@@ -11,8 +11,11 @@
 
         <StackPanel>
             <TextBlock HorizontalAlignment="Center" Text="Journal page"/>
-            <TextBox HorizontalAlignment="Center" Width="200" Name="name"/>
-            <HyperlinkButton HorizontalAlignment="Center" Content="Click to go to page 2" Click="NavigateToJournalViewPage"/>
+            <Grid x:Name="ContentPanel" HorizontalAlignment="Center" Grid.Row="2" Margin="12,0,12,0">
+                <ComboBox x:Name="ComboBox1" ItemsSource="{Binding}"
+                Foreground="Black" FontSize="30" Height="50" Width="780"/>
+            </Grid>
+            
         </StackPanel>
         
     </Grid>

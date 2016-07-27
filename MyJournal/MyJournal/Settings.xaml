@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="MyJournal.SettingsPage"
+    x:Class="MyJournal.MainPage1"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:MyJournal"
@@ -8,12 +8,8 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel>
-            <TextBlock HorizontalAlignment="Center" Text="Please specify time to receive the pop up"/>
-            <TimePicker HorizontalAlignment="Center" Width="200" Name="name"/>
-            <HyperlinkButton HorizontalAlignment="Center" Content="Go to Journal" Click="NavigateToJournalViewPage"/>
-            
-        </StackPanel>
+
+        <TimePicker Margin="200" Height="50" ></TimePicker>
 
     </Grid>
 </Page>
