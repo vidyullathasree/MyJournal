@@ -22,9 +22,13 @@ namespace MyJournal
     /// </summary>
     public sealed partial class JournalViewPage : Page
     {
+        LinkedList<WorkItem> workItems = new LinkedList<WorkItem>();
         public JournalViewPage()
         {
             this.InitializeComponent();
+            workItems.AddLast(new WorkItem { Time=new DateTime(), workItem="Santhi adds Text" });
+            workItems.AddLast(new WorkItem { Time=new DateTime(), workItem="Vidyu adds Text" });
+            ListViewDisplay.ItemsSource = workItems;
         }
 
         private void NavigateToJournalViewPage(object sender, RoutedEventArgs e)

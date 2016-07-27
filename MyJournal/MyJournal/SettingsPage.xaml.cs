@@ -33,6 +33,11 @@ namespace MyJournal
             this.Frame.Navigate(typeof(SettingsPage));
         }
 
+        private void NavigateToJournalViewPage(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(JournalViewPage));
+        }
+
         private async void StartNotifications_Click(object sender, RoutedEventArgs e)
         {
             var access = await BackgroundExecutionManager.RequestAccessAsync();
