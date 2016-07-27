@@ -26,9 +26,9 @@ namespace MyJournal
         public JournalViewPage()
         {
             this.InitializeComponent();
-            workItems.AddLast(new WorkItem(new DateTime(), "Santhi adds Text"));
-            workItems.AddLast(new WorkItem(new DateTime(), "Vidyu adds Text"));
-
+            workItems.AddLast(new WorkItem { Time=new DateTime(), workItem="Santhi adds Text" });
+            workItems.AddLast(new WorkItem { Time=new DateTime(), workItem="Vidyu adds Text" });
+            ListViewDisplay.ItemsSource = workItems;
         }
 
         private void NavigateToJournalViewPage(object sender, RoutedEventArgs e)
