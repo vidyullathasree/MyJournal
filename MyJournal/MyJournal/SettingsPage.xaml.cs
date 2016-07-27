@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Windows.ApplicationModel.Background;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,6 +31,38 @@ namespace MyJournal
         private void NavigateToAddSettingsPage(object sender, RoutedEventArgs e)
         {
             this.Frame.Navigate(typeof(SettingsPage));
+        }
+
+        private async void StartNotifications_Click(object sender, RoutedEventArgs e)
+        {
+            var access = await BackgroundExecutionManager.RequestAccessAsync();
+            switch (access)
+            {
+                case BackgroundAccessStatus.Unspecified:
+                    break;
+                case
+           BackgroundAccessStatus.AllowedMayUseActiveRealTimeConnectivity:
+                    break;
+                case
+           BackgroundAccessStatus.AllowedWithAlwaysOnRealTimeConnectivity:
+                    break;
+                case BackgroundAccessStatus.Denied:
+                    break;
+                default:
+                    break;
+            }
+            //Adding background task
+            var task = new BackgroundTaskBuilder
+            {
+                Name = "My Task",
+                TaskEntryPoint = typeof(MyJournalRuntimeComponent.MyJournalRuntimeTask).ToString()
+            };
+            var trigger = new ApplicationTrigger();
+            task.SetTrigger(trigger);
+            var condition = new
+            SystemCondition(SystemConditionType.InternetAvailable);
+            task.Register();
+            await trigger.RequestAsync();
         }
     }
 }
