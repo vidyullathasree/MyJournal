@@ -92,24 +92,27 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddItemPage.xaml.cs" >
-		<DependentUpon>AddItemPage.xaml</DependentUpon>
-	</Compile>
+    <Compile Include="AddItemPage.xaml.cs">
+      <DependentUpon>AddItemPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="JournalViewPage.xaml.cs">
-		<DependentUpon>JournalViewPage.xaml</DependentUpon>
-	</Compile>
+      <DependentUpon>JournalViewPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-	
+    <Compile Include="WelcomePage.xaml.cs">
+      <DependentUpon>WelcomePage.xaml</DependentUpon>
+    </Compile>
+ 
     <Compile Include="Properties\AssemblyInfo.cs" />
-	<Compile Include="WorkItem.cs" />
+    <Compile Include="WorkItem.cs" />
     <Compile Include="SettingsPage.xaml.cs">
-		<DependentUpon>SettingsPage.xaml</DependentUpon>
-	</Compile>
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -145,6 +148,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="WelcomePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

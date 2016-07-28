@@ -12,7 +12,7 @@
             <TextBlock HorizontalAlignment="Center" Text="Please specify time to receive the pop up"/>
             <TimePicker HorizontalAlignment="Center" Width="200" Name="name"/>
             <HyperlinkButton HorizontalAlignment="Center" Content="Go to Journal" Click="NavigateToJournalViewPage"/>
-            
+            <Button x:Name="StartNotifications" Content="StartNotifications" HorizontalAlignment="Center" VerticalAlignment="Stretch" Click="StartNotifications_Click"/>
         </StackPanel>
 
     </Grid>
