@@ -13,7 +13,7 @@ namespace MyJournalRuntimeComponent
         {
             var template = ToastTemplateType.ToastText01;
             var xml = ToastNotificationManager.GetTemplateContent(template);
-            var elements = xml.GetElementsByTagName("Test");
+            var elements = xml.GetElementsByTagName("My Task");
             var text = xml.CreateTextNode(message);
             elements[0].AppendChild(text);
             var toast = new ToastNotification(xml);
